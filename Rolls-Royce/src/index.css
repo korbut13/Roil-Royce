@@ -30,6 +30,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   padding: 0px;
+  cursor: none;
 }
 
 h1 {

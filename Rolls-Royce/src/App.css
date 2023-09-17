@@ -17,7 +17,6 @@
   display: flex;
   gap: 5px;
   height: 100%;
-  cursor: pointer;
 }
 .search-map{
   color:black
@@ -33,7 +32,6 @@
   flex-direction: column;
   align-items: center;
   padding-left: 229px;
-
 }
 .home__container-img{
    text-align: center;
@@ -62,7 +60,6 @@
 	align-self: center;
   text-transform: lowercase;
 
-  cursor:pointer;
   position:relative;
 
 	border:none;
@@ -93,6 +90,7 @@
   color: white;
   height: 100%;
   padding: 210px 50px 0px 50px;
+
 }
 
 .info-map{
@@ -101,7 +99,16 @@
 
 .home__map{
   width:50%;
-  height: 500px;
+  height: 100%;
   box-sizing: border-box;
   padding-bottom: 800px;
+  padding-top: 150px;
+}
+
+.leaflet-container{
+  height: 500px;
+  width:18%;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
