@@ -1,9 +1,16 @@
+import { motion as m} from "framer-motion";
+
 import Header from "../components/Header";
 import { carsData } from "../db";
 
 const ProductsPage = () => {
   return (
-    <div className="products__page" style={{width:"100%"}}>
+    <m.div
+    initial={{x:"-100%", opacity:"0"}}
+    animate={{x:"0", opacity:"1"}}
+    exit={{x:"-100%"}}
+    transition={{duration:2}}
+    className="products__page" style={{width:"100%"}}>
      <Header/>
      <div className="products__container" style={
       {width:"70%", margin:"50px auto 50px auto", display:"flex", flexWrap:"wrap",justifyContent:"space-between", gap:"75px"}}>
@@ -19,7 +26,7 @@ const ProductsPage = () => {
         })
         }
       </div>
-    </div>
+    </m.div>
   )
 };
 
