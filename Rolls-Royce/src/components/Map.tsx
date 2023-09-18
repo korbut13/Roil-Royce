@@ -57,7 +57,7 @@ const Map = () => {
 
   return(
     <>
-      <div id="map" style={{ height: '500px', background:'none' }}></div>
+      <div id="map" style={{ height: '400px', background:'none'}}></div>
     </>
   )
 }

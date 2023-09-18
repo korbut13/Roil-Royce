@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { useDisclosure} from '@mantine/hooks';
 import { Burger } from '@mantine/core';
 import { Search } from 'tabler-icons-react';
@@ -18,11 +16,11 @@ const Header = ({visible, onChangeVisible}:{visible:boolean, onChangeVisible:()=
       </div>
       <div
         onClick={onChangeVisible}
-        className={!visible ? "header__search" : "header__search search-map"}>
+        className="header__search">
           <Search
             size={28}
             strokeWidth={1.5}
-            color={!visible ? 'white' : 'black'}
+            color='white'
           />
           <span>Find a dealer</span>
       </div>
