@@ -1,15 +1,15 @@
+import { Link } from "react-router-dom";
 import { Button } from "@mantine/core";
 
 import Car from '../assets/pngimg.com - rolls_royce_PNG18.png';
 import verticalText from "../utils/vertical-text";
-import Map from "../components/Map";
 
 const HomePage = ({visible, onChangeVisible}:{visible:boolean, onChangeVisible:() => void}) => {
 
   return(
     <div className="home">
       <div className="home__left">
-        <div className="home__left_button">{verticalText("Models")}</div>
+        <Link to={"/products"} className="home__left_button">{verticalText("Models")}</Link>
       </div>
       <div
       onClick={()=> {

@@ -19,16 +19,16 @@ function App() {
 
   // window.addEventListener('mousemove', positionElement)
 
-
   return (
     <>
-    {/* <div ref={cursorRef} style={{width: "30px", height: "30px",border: "2px solid #DCDCDC", borderRadius: "50%", position:"absolute", zIndex:"1000", boxSizing:"border-box"}}></div> */}
-    <div className="main-part" style={{width:"100%"}}>
-      <Header visible={visible} onChangeVisible={()=>{setVisible(!visible)}}/>
-      <HomePage visible={visible} onChangeVisible={()=>{setVisible(!visible)}}/>
-    </div>
-    {visible && (<Map/>)}
-    </>
+      {/* <div ref={cursorRef} style={{width: "30px", height: "30px",border: "2px solid #DCDCDC", borderRadius: "50%", position:"absolute", zIndex:"1000", boxSizing:"border-box"}}></div> */}
+
+      <div className="main-part" style={{width:"100%"}}>
+        <Header onChangeVisible={()=>{setVisible(!visible)}}/>
+        <HomePage visible={visible} onChangeVisible={()=>{setVisible(!visible)}}/>
+      </div>
+      {visible && (<Map/>)}
+      </>
   )
 }
 
