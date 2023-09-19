@@ -13,7 +13,7 @@ const ProductsPage = () => {
     className="products__page" style={{width:"100%"}}>
      <Header/>
      <div className="products__container" style={
-      {width:"70%", margin:"50px auto 50px auto", display:"flex", flexWrap:"wrap",justifyContent:"space-between", gap:"75px"}}>
+      {width:"70%", margin:"10% auto 50px auto", display:"flex", flexWrap:"wrap",justifyContent:"space-between", gap:"75px"}}>
         {carsData.map(car => {
           return (
           <div style={{display:"flex", flexDirection:"column",}}>

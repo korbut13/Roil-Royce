@@ -25,11 +25,7 @@ const HomePage = ({visible, onChangeVisible}:{visible:boolean, onChangeVisible:(
         </div>
         <div
         className={!visible ? "home__container-img" : "home__container-img container-img-map"}>
-          <m.img
-           initial={{width:0}}
-           animate={{width:"70%"}}
-           exit={{x:"400px", y:"500px",transition:{duration:0.1}}}
-           transition={{duration:2}}
+          <img
           src={Car} alt="" className={!visible ? "container-img__img" : "container-img__img img-map"} />
         </div>
         <Button style={{cursor:"none"}} variant="outline" color="dark" radius="xl" size="md" p="0px 40px">Discover Now</Button>

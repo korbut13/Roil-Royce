@@ -38,11 +38,11 @@
 .home__container-img{
    text-align: center;
    width: 80%;
-   height: 40rem;
+   height: 53rem;
 }
-.container-img-map{
+/* .container-img-map{
   height: 40rem;
-}
+} */
 
 .container-img__img{
   position: absolute;
@@ -58,6 +58,7 @@
   font-size: 70px;
   text-align: center;
   letter-spacing: 15px;
+  padding-left: 165px;
 }
 
 .home__subtitle{
@@ -97,13 +98,13 @@
 .right__info{
   position: absolute;
   z-index: -10;
-  top: -578px;
+  top: -683px;
   color: white;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,71,1) 62%, rgba(7,55,65,1) 100%);
   padding-top: 120px;
   padding-left: 40px;
   padding-right: 20px;
-  padding-bottom: 48rem;
+  padding-bottom: 62rem;
 }
 
 .leaflet-container{
