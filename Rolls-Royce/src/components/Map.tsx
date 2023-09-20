@@ -42,7 +42,7 @@ import L from "leaflet";
 import {Geocoder, geocoders} from 'leaflet-control-geocoder';
 
 
-const Map = () => {
+const MapComponent = () => {
   useEffect(() => {
     const map = L.map('map').setView([51.505, -0.09], 13);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -62,4 +62,4 @@ const Map = () => {
   )
 }
 
-export default Map;
+export default MapComponent;
