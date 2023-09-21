@@ -85,9 +85,9 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
     >
       <m.div
 
-          initial={! visibleMap && {y:30, opacity:0}}
-          animate={!visibleMap && {y:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
-          exit={{y:30, opacity:0,  transition:{duration:1.3, delay:0.7}}}
+          initial={! visibleMap && {y:50, opacity:0}}
+          animate={!visibleMap && {y:0, opacity:1, transition:{duration:0.7, delay:0.3}}}
+          exit={{y:50, opacity:0,  transition:{duration:0.7, delay:0.3}}}
 
           className="home__title">
             Black Badge
@@ -99,7 +99,7 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
           initial={{x:-100}}
           animate={{x:0}}
           exit={{x:-100}}
-          transition={{duration:1.3, delay:0.7, easings:"ease-in-out"}}
+          transition={{duration:0.7, delay:0.3, ease:"linear"}}
         >
           <Link to={"/products"} className="home__left_button">{verticalText("Models")}</Link>
         </m.div>
@@ -107,10 +107,10 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
         <div className="home__center">
           <m.img
             initial={!direction ? {x:400, opacity:0} : visibleMap ? {x: 0} : {x:0}}
-            animate={!direction ? {x:0, opacity:1, transition:{duration:1.3, delay:0.7, "ease":"linear"}}
+            animate={!direction ? {x:0, opacity:1, transition:{duration:0.7, delay:0.3, "ease":"linear"}}
             : visibleMap ? {x:-200, transition:{duration:0.4, "ease":"linear"}}
             : {x:0, transition:{duration:0.4, "ease":"linear"}}}
-            exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7, "ease":"linear"}}}
+            exit={{x:400, opacity:0, transition:{duration:0.7, delay:0.4, "ease":"linear"}}}
 
               src={Car} alt="" className={!visibleMap ? "center__img": "center__img center__img-map"}
           />
@@ -119,7 +119,7 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
         <m.div className={!visibleMap ? "right__info": "right__info right__info-map"}
 
           initial={!direction ? {x:400, opacity:0} : visibleMap ? {x:0} :  {x:0}}
-          animate={!direction ? {x:0, opacity:1, transition:{duration:1.3, delay:0.7}} :
+          animate={!direction ? {x:0, opacity:1, transition:{duration:0.7, delay:0.3}} :
           visibleMap ? {x:-595, transition:{duration:0.4, "ease":"easeIn"}} :
           {x:0,transition:{duration:0.4, "ease":"easeIn"}}}
           exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7}}}
@@ -137,10 +137,10 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
 
       </div>
       <m.button
-        initial={!visibleMap && {y:20, opacity:0} }
-        animate={!visibleMap && {y:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
-        exit={{y:20, opacity:0, transition:{duration:1.3, delay:0.7}} }
-        transition={{duration:1.3, delay:0.7}}
+        initial={!visibleMap && {y:50, opacity:0} }
+        animate={!visibleMap && {y:0, opacity:1, transition:{duration:0.7, delay:0.3}}}
+        exit={{y:50, opacity:0, transition:{duration:0.7, delay:0.3}} }
+
       style={{display:"block", margin:"500px auto 0 auto", padding:"10px 70px", borderRadius:"10px"}}>Discover Now</m.button>
     </m.div>
   )
