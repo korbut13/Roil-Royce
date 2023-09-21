@@ -50,8 +50,13 @@
 
 .center__img{
   position: absolute;
-  width: 60%;
+  /* width: 60%; */
+  width: 1600px;
   left: 13%;
+}
+.center__img-map{
+  /* width: 60%; */
+  /* left: 9%; */
 }
 .home__title{
   font-size: 50px;
@@ -98,7 +103,7 @@
   z-index: -10;
   top: 0;
   right: 0;
-  width: 32%;
+  width: 25%;
   height: 100%;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,71,1) 62%, rgba(7,55,65,1) 100%);
   color: white;
@@ -113,11 +118,11 @@
   width: 100%; */
 }
 .right__info-map{
-  right: 591px;
-  width: 25%;
+  /* width: 25%; */
 }
 
 .leaflet-container{
   width:30%;
+  /* width: 500px; */
   margin-top: 140px;
 }

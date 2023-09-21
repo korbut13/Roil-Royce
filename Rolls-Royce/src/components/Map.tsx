@@ -40,6 +40,7 @@ import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {Geocoder, geocoders} from 'leaflet-control-geocoder';
+import {motion as m} from "framer-motion"
 
 
 const MapComponent = () => {
@@ -57,7 +58,10 @@ const MapComponent = () => {
 
   return(
     <>
-      <div id="map" style={{ height: '400px', background:'none'}}></div>
+      <m.div
+        initial={{opacity:0}}
+        animate={{opacity:1, transition:{duration:0.8, delay:0.5}}}
+      id="map" style={{ height: '400px', background:'none'}}></m.div>
     </>
   )
 }

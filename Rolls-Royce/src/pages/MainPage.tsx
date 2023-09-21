@@ -49,20 +49,46 @@
 // export default MainPage;
 
 import { Link } from "react-router-dom";
+import {useState, useEffect} from "react";
 import {motion as m} from "framer-motion";
 
 import Car from '../assets/pngimg.com - rolls_royce_PNG18.png';
 import verticalText from "../utils/vertical-text";
 
-const MainPage = ({visibleMap}:{visibleMap:boolean}) => {
+const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
+  // const variant = {
+  //   initial:{
+  //     x:400,
+  //     opacity:0
+  //   },
+  //   animate:{
+  //     x:0,
+  //     opacity:1
+  //   },
+  //   exit:{
+  //     x:400,
+  //     opacity:0
+  //   }}
+  const [direction, setDirection] = useState(false);
+  useEffect(() => {
+    setDirection(true);
+
+    return ()=>{
+      setDirection(false);
+    }
+  },[]);
 
   return(
-    <m.div>
+    <m.div
+      initial={!visibleMap ? {width:"100%"} : {width:"75%"}}
+      animate={!visibleMap ? {width:"100%"} : {width:"75%", transition:{ duration:0.4, ease:"linear"}}}
+    >
       <m.div
-          initial={{y:30, opacity:0}}
-          animate={{y:0, opacity:1}}
-          exit={{y:30, opacity:0}}
-          transition={{duration:0.3, delay:0.5}}
+
+          initial={! visibleMap && {y:30, opacity:0}}
+          animate={!visibleMap && {y:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
+          exit={{y:30, opacity:0,  transition:{duration:1.3, delay:0.7}}}
+
           className="home__title">
             Black Badge
           <p className="home__subtitle">Wraith</p>
@@ -73,27 +99,34 @@ const MainPage = ({visibleMap}:{visibleMap:boolean}) => {
           initial={{x:-100}}
           animate={{x:0}}
           exit={{x:-100}}
-          transition={{duration:0.3, delay:0.5, easings:"ease-in-out"}}
+          transition={{duration:1.3, delay:0.7, easings:"ease-in-out"}}
         >
           <Link to={"/products"} className="home__left_button">{verticalText("Models")}</Link>
         </m.div>
 
         <m.div className="home__center"
-          initial={{x:400, opacity:0}}
-          animate={{x:0, opacity:1}}
-          exit={{x:400, opacity:0}}
-          transition={{duration:0.3, delay:0.5, }}
+
+          initial={!visibleMap && {x:400, opacity:0}}
+          animate={!visibleMap && {x:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
+          exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7}}}
+          transition={{duration:1.3, delay:0.7, }}
         >
-          <img
-              src={Car} alt="" className="center__img"
+          <m.img
+            initial={visibleMap ? {x:0} : {x:0}}
+            animate={visibleMap ? {x:-200, transition:{duration:0.4, "ease":"linear"}} : {x:0, transition:{duration:0.4, "ease":"linear"}}}
+
+              src={Car} alt="" className={!visibleMap ? "center__img": "center__img center__img-map"}
           />
         </m.div>
 
         <m.div className={!visibleMap ? "right__info": "right__info right__info-map"}
-          initial={{x:400, opacity:0}}
-          animate={{x:0, opacity:1}}
-          exit={{x:400, opacity:0}}
-          transition={{duration:0.3, delay:0.5, }}
+
+          initial={!direction ? {x:400, opacity:0} : visibleMap ? {x:0} :  {x:0}}
+          animate={!direction ? {x:0, opacity:1, transition:{duration:1.3, delay:0.7}} :
+          visibleMap ? {x:-595, transition:{duration:0.4, "ease":"easeIn"}} :
+          {x:0,transition:{duration:0.4, "ease":"easeIn"}}}
+          exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7}}}
+
         >
           <p className="right__title">
               Rolls-Royce Coachbuild Presents
@@ -107,10 +140,10 @@ const MainPage = ({visibleMap}:{visibleMap:boolean}) => {
 
       </div>
       <m.button
-        initial={{y:20, opacity:0}}
-        animate={{y:0, opacity:1}}
-        exit={{y:20, opacity:0}}
-        transition={{duration:0.3, delay:0.5}}
+        initial={!visibleMap && {y:20, opacity:0} }
+        animate={!visibleMap && {y:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
+        exit={{y:20, opacity:0, transition:{duration:1.3, delay:0.7}} }
+        transition={{duration:1.3, delay:0.7}}
       style={{display:"block", margin:"500px auto 0 auto", padding:"10px 70px", borderRadius:"10px"}}>Discover Now</m.button>
     </m.div>
   )

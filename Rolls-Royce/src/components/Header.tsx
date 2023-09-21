@@ -11,7 +11,6 @@ const Header:React.FC<HeaderProps> = ({onChangeVisible}) => {
   const label = opened ? 'Close navigation' : 'Open navigation';
 
   const location = useLocation();
-  console.log("hello")
 
   return (
     <div className="header">

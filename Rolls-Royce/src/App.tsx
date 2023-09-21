@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <div style={{width:"100%"}}>
-        <Header onChangeVisible={()=>{setVisible(!visible)}}/>
+        <Header onChangeVisible={()=>{
+          setVisible(!visible);
+        }}/>
         <div id="content">
           <AnimatedRoutes visibleMap={visible}/>
         </div>
