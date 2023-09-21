@@ -104,20 +104,17 @@ const MainPage = ({visibleMap,}:{visibleMap:boolean}) => {
           <Link to={"/products"} className="home__left_button">{verticalText("Models")}</Link>
         </m.div>
 
-        <m.div className="home__center"
-
-          initial={!visibleMap && {x:400, opacity:0}}
-          animate={!visibleMap && {x:0, opacity:1, transition:{duration:1.3, delay:0.7}}}
-          exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7}}}
-          transition={{duration:1.3, delay:0.7, }}
-        >
+        <div className="home__center">
           <m.img
-            initial={visibleMap ? {x:0} : {x:0}}
-            animate={visibleMap ? {x:-200, transition:{duration:0.4, "ease":"linear"}} : {x:0, transition:{duration:0.4, "ease":"linear"}}}
+            initial={!direction ? {x:400, opacity:0} : visibleMap ? {x: 0} : {x:0}}
+            animate={!direction ? {x:0, opacity:1, transition:{duration:1.3, delay:0.7, "ease":"linear"}}
+            : visibleMap ? {x:-200, transition:{duration:0.4, "ease":"linear"}}
+            : {x:0, transition:{duration:0.4, "ease":"linear"}}}
+            exit={{x:400, opacity:0, transition:{duration:1.3, delay:0.7, "ease":"linear"}}}
 
               src={Car} alt="" className={!visibleMap ? "center__img": "center__img center__img-map"}
           />
-        </m.div>
+        </div>
 
         <m.div className={!visibleMap ? "right__info": "right__info right__info-map"}
 
