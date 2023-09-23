@@ -108,15 +108,9 @@
   height: 100%;
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,71,1) 62%, rgba(7,55,65,1) 100%);
   color: white;
-  padding: 120px 20px 20px 40px;
-  /* top: -304px;
-  color: white;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,38,71,1) 62%, rgba(7,55,65,1) 100%);
-  padding-top: 182px;
-  padding-left: 40px;
-  padding-right: 20px;
-  padding-bottom: 34.45rem;
-  width: 100%; */
+  /* padding: 120px 20px 20px 40px; */
+  padding: 120px 20px 0px 40px;
+
 }
 .right__info-map{
   /* width: 25%; */

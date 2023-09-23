@@ -2,18 +2,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDisclosure} from '@mantine/hooks';
 import { Burger } from '@mantine/core';
 import { Search } from 'tabler-icons-react';
+import {motion as m} from "framer-motion";
 
 import logo from '../assets/rolls-royce.svg';
 import { HeaderProps } from '../types/props';
 
-const Header:React.FC<HeaderProps> = ({onChangeVisible}) => {
+const Header:React.FC<HeaderProps> = ({visibleMap, onChangeVisible}) => {
   const [opened, { toggle }] = useDisclosure(false);
   const label = opened ? 'Close navigation' : 'Open navigation';
 
   const location = useLocation();
 
   return (
-    <div className="header">
+    <m.div
+    initial={!visibleMap ? {width:"100%"} : {width:"100%"}}
+    animate={!visibleMap ? {width:"100%"} : {width:"100%", transition:{ duration:1, ease:"linear"}}}
+
+    className="header">
       <Burger opened={opened} onClick={toggle} aria-label={label} />
       <Link to={"/"} className="logo">
         <img src={logo} alt="Rolls-Royce Logo" className="logo__img" />
@@ -30,7 +35,7 @@ const Header:React.FC<HeaderProps> = ({onChangeVisible}) => {
           <span>Find a dealer</span></>)}
 
       </div>
-    </div>
+    </m.div>
   )
 };
 

@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <div style={{width:"100%"}}>
-        <Header onChangeVisible={()=>{
+        <Header visibleMap={visible} onChangeVisible={()=>{
           setVisible(!visible);
         }}/>
         <div id="content">

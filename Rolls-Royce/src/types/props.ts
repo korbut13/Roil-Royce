@@ -1,4 +1,4 @@
 export type HeaderProps = {
-  onChangeVisible?: () => void
-
+  onChangeVisible?: () => void;
+  visibleMap?: boolean,
 }
